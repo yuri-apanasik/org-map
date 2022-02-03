@@ -20,7 +20,6 @@ export const STATIC_PROJECTS_TREE: OrgTreeNode[] = [
           { id: 'SCM', title: 'SCM' },
           { id: 'COREB', title: 'Core B' },
           { id: 'COREI', title: 'Core I' },
-          { id: 'MOB', title: 'Mobile' },
         ],
       },
       {

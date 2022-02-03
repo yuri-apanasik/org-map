@@ -14,7 +14,7 @@
   <div class="truncate">{{projectNode?.title}}</div>
 </div>
 
-<div *ngIf="mode === 'BODY' && jobAssignedPersons.length" class="flex flex-auto items-center justify-center gap-1">
+<div *ngIf="mode === 'BODY' && jobAssignedPersons.length" class="absolute inset-0 flex flex-auto items-center justify-center gap-1 z-10">
   <ng-container *ngFor="let person of jobAssignedPersons">
     <om-person-avatar [person]="person"></om-person-avatar>
   </ng-container>

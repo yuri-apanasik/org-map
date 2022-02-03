@@ -84,8 +84,8 @@ export class ProjectsTreeComponent implements OnChanges, OnDestroy {
     this.hostClass = `${BASE_HOST_CLASS}`;
     if (this.mode === 'HEADER') { this.hostClass += ` bg-white ${this.isLeaf ? '' : 'border-r-0'} items-center`; }
     if (this.mode === 'BODY') {
-      this.hostClass += ` w-28 ${this.isLeaf ? '' : 'border-x-0'}`;
-      if (!this.projectResponsiblePersons.length && !this.jobResponsiblePersons.length && !this.jobAssignedPersons.length) { this.hostClass += ` border-white`; }
+      this.hostClass += ` w-28`;
+      if (!this.projectResponsiblePersons.length && !this.jobResponsiblePersons.length && !this.jobAssignedPersons.length) { this.hostClass += ` border-x-0 border-white`; }
     }
 
     this.hostHeight = this.isLeaf ? this.projectsTreeHeaderHeight : undefined;
@@ -104,7 +104,8 @@ export class ProjectsTreeComponent implements OnChanges, OnDestroy {
       .filter(p => this.selectedPersonIds.includes(p.id)) : [];
 
     this.jobAssignedPersons = this.assignmentsVisible ? this.persons
-      .filter(p => this.mode === 'BODY' && this.jobAssignments.some(r => r.personId === p.id && !this.jobNode?.nodes && r.sourceNodeIds.some(sn => this.jobNode?.path?.includes(sn)) && !this.projectNode?.nodes && r.targetNodeIds.some(tn => this.projectNode?.path?.includes(tn))))
+      //.filter(p => this.mode === 'BODY' && this.jobAssignments.some(r => r.personId === p.id && !this.jobNode?.nodes && r.sourceNodeIds.some(sn => this.jobNode?.path?.includes(sn)) && !this.projectNode?.nodes && r.targetNodeIds.some(tn => this.projectNode?.path?.includes(tn))))
+      .filter(p => this.mode === 'BODY' && this.jobAssignments.some(r => r.personId === p.id && r.sourceNodeIds.includes(this.jobNode?.id ?? '') && r.targetNodeIds.includes(this.projectNode?.id ?? '')))
       .filter(p => this.selectedPersonIds.includes(p.id)) : [];
   }
 
