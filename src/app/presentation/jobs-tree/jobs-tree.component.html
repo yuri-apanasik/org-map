@@ -1,0 +1,23 @@
+<div class="absolute -top-2.5 inset-x-0 flex justify-center gap-1">
+  <ng-container *ngFor="let person of jobResponsiblePersons">
+    <om-person-avatar [person]="person"></om-person-avatar>
+  </ng-container>
+</div>
+
+<div class="flex text-gray-500 pl-2 pt-2 text-sm font-medium" [style.height.px]="headerHeight">
+  <div>{{jobNode?.title}}</div>
+</div>
+
+<div class="flex flex-auto gap-2 px-2" [ngClass]="{'flex-col': isLeaf}">
+  <ng-container *ngIf="!isLeaf">
+    <ng-container *ngFor="let childNode of jobNode?.nodes">
+      <om-jobs-tree [jobNode]="childNode" [level]="level + 1"></om-jobs-tree>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="isLeaf">
+    <ng-container *ngFor="let childNode of projectsTree">
+      <om-projects-tree [jobNode]="jobNode" [projectNode]="childNode" mode="BODY"></om-projects-tree>
+    </ng-container>
+  </ng-container>
+</div>

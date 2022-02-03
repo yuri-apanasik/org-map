@@ -1,0 +1,43 @@
+import { InjectionToken } from '@angular/core';
+import { OrgTreeAssignment } from '../models/org-tree-assignment';
+
+export const JOB_ASSIGNMENTS = new InjectionToken<OrgTreeAssignment[]>('Job assignments');
+
+export const STATIC_JOB_ASSIGNMENTS: OrgTreeAssignment[] = [
+  { personId: 'AM', sourceNodeIds: ['JAVA'], targetNodeIds: ['FORMS'] },
+  { personId: 'AB', sourceNodeIds: ['ANG'], targetNodeIds: ['SCM'] },
+  { personId: 'AV', sourceNodeIds: ['JAVA'], targetNodeIds: ['PGD'] },
+  { personId: 'AG', sourceNodeIds: ['JAVA'], targetNodeIds: ['TUN'] },
+  { personId: 'AT', sourceNodeIds: ['VUE'], targetNodeIds: ['RK'] },
+  { personId: 'AR', sourceNodeIds: ['ANG'], targetNodeIds: ['TUN'] },
+  { personId: 'AN', sourceNodeIds: ['DEVOPS'], targetNodeIds: ['IRIS'] },
+  { personId: 'AKT', sourceNodeIds: ['MANT'], targetNodeIds: ['TUN'] },
+  { personId: 'AVN', sourceNodeIds: ['ANG'], targetNodeIds: ['TUN'] },
+  { personId: 'AE', sourceNodeIds: ['DEVOPS'], targetNodeIds: ['IRIS', 'PRTEAM'] },
+  { personId: 'VA', sourceNodeIds: ['ANG'], targetNodeIds: ['FORMS'] },
+  { personId: 'VF', sourceNodeIds: ['ANG'], targetNodeIds: ['COREB'] },
+  { personId: 'DB', sourceNodeIds: ['AND'], targetNodeIds: ['MOB'] },
+  { personId: 'DP', sourceNodeIds: ['ANG'], targetNodeIds: ['TUN'] },
+  { personId: 'DH', sourceNodeIds: ['JAVA'], targetNodeIds: ['SCM'] },
+  { personId: 'EV', sourceNodeIds: ['VUE'], targetNodeIds: ['RK'] },
+  { personId: 'EK', sourceNodeIds: ['ANG'], targetNodeIds: ['COREB'] },
+  { personId: 'IK', sourceNodeIds: ['ANG'], targetNodeIds: ['PGD'] },
+  { personId: 'IN', sourceNodeIds: ['ANG'], targetNodeIds: ['FORMS', 'PGD'] },
+  { personId: 'IF', sourceNodeIds: ['AND'], targetNodeIds: ['MOB'] },
+  { personId: 'KS', sourceNodeIds: ['IOS'], targetNodeIds: ['MOB'] },
+  { personId: 'MM', sourceNodeIds: ['AUTOT'], targetNodeIds: ['FORMS'] },
+  { personId: 'MS', sourceNodeIds: ['JAVA'], targetNodeIds: ['COREI'] },
+  { personId: 'MO', sourceNodeIds: ['ANG'], targetNodeIds: ['PGD'] },
+  { personId: 'ND', sourceNodeIds: ['ANG'], targetNodeIds: ['FORMS'] },
+  { personId: 'NS', sourceNodeIds: ['PM'], targetNodeIds: ['PGD', 'COREB'] },
+  { personId: 'OS', sourceNodeIds: ['JAVA'], targetNodeIds: ['TUN'] },
+  { personId: 'PN', sourceNodeIds: ['AUTOT'], targetNodeIds: ['COREB'] },
+  { personId: 'PC', sourceNodeIds: ['MANT'], targetNodeIds: ['PGD'] },
+  { personId: 'RK', sourceNodeIds: ['JAVA'], targetNodeIds: ['COREB'] },
+  { personId: 'SK', sourceNodeIds: ['PM'], targetNodeIds: ['FORMS', 'TUN'] },
+  { personId: 'SS', sourceNodeIds: ['MANT'], targetNodeIds: ['FORMS'] },
+  { personId: 'TK', sourceNodeIds: ['MANT'], targetNodeIds: ['FORMS'] },
+  { personId: 'TM', sourceNodeIds: ['ANG'], targetNodeIds: ['COREB'] },
+  { personId: 'YS', sourceNodeIds: ['ANG'], targetNodeIds: ['COREB'] },
+  { personId: 'YA', sourceNodeIds: ['ANG', 'DNET'], targetNodeIds: ['FORMS'] },
+];

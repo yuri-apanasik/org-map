@@ -1,0 +1,23 @@
+<div class="flex m-2">
+  <div class="flex-1 text-sm font-medium text-gray-500">
+    Show
+    <span class="text-gray-400 hover:text-gray-600 cursor-pointer" (click)="selectAll()">all</span>
+    /
+    <span class="text-gray-400 hover:text-gray-600 cursor-pointer" (click)="selectNone()">none</span>
+  </div>
+  <div class="flex-1 text-sm font-medium text-gray-500">
+    Highlight
+    <span class="text-gray-400 hover:text-gray-600 cursor-pointer" (click)="highlightAll()">all</span>
+    /
+    <span class="text-gray-400 hover:text-gray-600 cursor-pointer" (click)="highlightNone()">none</span>
+  </div>
+</div>
+<div *ngIf="personsFormGroup" [formGroup]="personsFormGroup" class="overflow-auto">
+  <div *ngFor="let person of persons" class="flex items-center gap-2 m-1" [formGroup]="$any(personsFormGroup.get(person.id))">
+    <input type="checkbox" formControlName="selected" />
+    <div class="flex items-center gap-1 cursor-pointer select-none" (click)="togglePersonHighlighted(person.id)">
+      <om-person-avatar [person]="person" [noColor]="!isPersonHighlighted(person.id)"></om-person-avatar>
+      <span class="text-sm font-medium" [ngClass]="isPersonHighlighted(person.id) ? 'text-gray-500' : 'text-gray-400'">{{person.name}}</span>
+    </div>
+  </div>
+</div>

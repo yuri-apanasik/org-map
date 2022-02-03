@@ -1,0 +1,27 @@
+<div class="absolute -top-2.5 inset-x-0 flex justify-center gap-1">
+  <ng-container *ngFor="let person of jobResponsiblePersons">
+    <om-person-avatar [person]="person"></om-person-avatar>
+  </ng-container>
+</div>
+
+<div *ngIf="mode === 'HEADER'" class="absolute -left-2.5 inset-y-0 flex flex-col justify-center gap-1">
+  <ng-container *ngFor="let person of projectResponsiblePersons">
+    <om-person-avatar [person]="person"></om-person-avatar>
+  </ng-container>
+</div>
+
+<div *ngIf="mode === 'HEADER'" class="text-gray-500 pl-3 text-sm font-medium">
+  <div class="truncate">{{projectNode?.title}}</div>
+</div>
+
+<div *ngIf="mode === 'BODY' && jobAssignedPersons.length" class="flex flex-auto items-center justify-center gap-1">
+  <ng-container *ngFor="let person of jobAssignedPersons">
+    <om-person-avatar [person]="person"></om-person-avatar>
+  </ng-container>
+</div>
+
+<div *ngIf="projectNode?.nodes?.length" class="flex flex-auto flex-col gap-2 py-2">
+  <ng-container *ngFor="let childNode of projectNode?.nodes">
+    <om-projects-tree [jobNode]="jobNode" [projectNode]="childNode" [mode]="mode" [level]="level + 1"></om-projects-tree>
+  </ng-container>
+</div>
