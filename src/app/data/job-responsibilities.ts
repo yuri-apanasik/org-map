@@ -6,7 +6,6 @@ export const JOB_RESPONSIBILITIES = new InjectionToken<OrgTreeAssignment[]>('Job
 export const STATIC_JOB_RESPONSIBILITIES: OrgTreeAssignment[] = [
   { personId: 'AK', sourceNodeIds: ['HR'], targetNodeIds: [] },
   { personId: 'AN', sourceNodeIds: ['DEVOPS'], targetNodeIds: [] },
-  { personId: 'MA', sourceNodeIds: ['REC'], targetNodeIds: [] },
   { personId: 'ME', sourceNodeIds: ['ACC'], targetNodeIds: [] },
   { personId: 'MO', sourceNodeIds: ['ANG'], targetNodeIds: ['PRTEAM'] },
   { personId: 'RK', sourceNodeIds: ['JAVA'], targetNodeIds: ['PRTEAM'] },

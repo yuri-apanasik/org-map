@@ -26,6 +26,7 @@ export const STATIC_JOB_ASSIGNMENTS: OrgTreeAssignment[] = [
   { personId: 'IN', sourceNodeIds: ['ANG'], targetNodeIds: ['FORMS', 'PGD'] },
   { personId: 'IF', sourceNodeIds: ['AND'], targetNodeIds: ['IRIS'] },
   { personId: 'KS', sourceNodeIds: ['IOS'], targetNodeIds: ['IRIS'] },
+  { personId: 'MA', sourceNodeIds: ['REC'], targetNodeIds: ['STR', 'INT'] },
   { personId: 'MM', sourceNodeIds: ['AUTOT'], targetNodeIds: ['FORMS'] },
   { personId: 'MS', sourceNodeIds: ['JAVA'], targetNodeIds: ['COREI'] },
   { personId: 'MO', sourceNodeIds: ['ANG'], targetNodeIds: ['PGD'] },
